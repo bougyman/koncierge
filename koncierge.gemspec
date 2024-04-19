@@ -32,7 +32,7 @@ module Rubyists
       end
     end
     spec.bindir = 'exe'
-    spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
+    spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }.reject { |f| f.end_with?('.sh') }
     spec.require_paths = ['lib']
 
     # Uncomment to register a new dependency of your gem
